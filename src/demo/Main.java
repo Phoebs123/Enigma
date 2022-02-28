@@ -3,8 +3,9 @@ import java.util.Scanner;
 
 public class Main {
     Scanner in = new Scanner(System.in);
-    int menu1, menu2, menu0;
+    int menu1, menu2, menu0, shift;
     char caesarValg;
+    String krypteringsTekst;
 
     void menu() {
         System.out.println("MENU");
@@ -21,6 +22,18 @@ public class Main {
             System.out.println("Ønsker du at kryptere eller dekryptere? Skriv K for at kryptere" +
                 "eller skriv D for at dekryptere");
             caesarValg = in.next().charAt(0);
+        }
+    }
+
+    void caesarKryptering() {
+        if (caesarValg == 'K') {
+            System.out.println("Cæsar Kryptering");
+            System.out.println("Indtast tekst:");
+            krypteringsTekst = in.nextLine();
+            System.out.println("Vælg shift (0-29):");
+            shift = in.nextInt();
+            System.out.println("Kodeteksten er: ");
+            System.out.println("XXXXXXXXXXXXXXXXX");
         }
     }
 
