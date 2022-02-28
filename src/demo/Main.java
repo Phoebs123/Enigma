@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class Main {
     Scanner in = new Scanner(System.in);
-    int menu1, menu2, menu0, shift;
+    int menu1, menu2, menu0, shift, nogleord;
     char caesarValg, vigenereValg;
-    String krypteringsTekst, kodeTekst;
+    String krypteringsTekst, kodeTekst, vigenereTekst, vigenereKodetekst;
 
     void menu() {
         System.out.println("MENU");
@@ -73,6 +73,48 @@ public class Main {
                 "eller skriv D for at dekryptere");
             vigenereValg = in.next().charAt(0);
         }
+    }
+
+    void vigenereKryptering() {
+        if (vigenereValg == 'K') {
+            System.out.println("Vigenére Kryptering");
+            System.out.println("Indtast tekst:");
+            vigenereTekst = in.nextLine();
+            System.out.println("Indtast nøgleord:");
+            nogleord = in.nextInt();
+            System.out.println("Kodeteksten er:");
+            System.out.println("XXXXXXXXXXXXXXXX");
+        }
+    }
+
+    void efterVigenereKryptering() {
+        System.out.println("1) Tryk K for at kryptere en ny tekst");
+        caesarValg = in.next().charAt(0);
+        System.out.println("2) Tryk D for at dekryptere en tekst");
+        caesarValg = in.next().charAt(0);
+        System.out.println("3) Tryk 0 for at komme til hovedmenuen");
+        menu0 = in.nextInt();
+    }
+
+    void vigenereDekryptering() {
+        if (vigenereValg == 'D') {
+            System.out.println("Vigenére Dekryptering");
+            System.out.println("Indtast kodetekst:");
+            vigenereKodetekst = in.nextLine();
+            System.out.println("Indtast nøgleord:");
+            nogleord = in.nextInt();
+            System.out.println("Originalteksten er:");
+            System.out.println("XXXXXXXXXXXXXXXX");
+        }
+    }
+
+    void efterVigenereDekryptering() {
+        System.out.println("1) Tryk D for at dekryptere en ny tekst");
+        caesarValg = in.next().charAt(0);
+        System.out.println("2) Tryk K for at kryptere en tekst");
+        caesarValg = in.next().charAt(0);
+        System.out.println("3) Tryk 0 for at komme til hovedmenuen");
+        menu0 = in.nextInt();
     }
 
     void go() {
