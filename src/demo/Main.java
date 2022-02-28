@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     Scanner in = new Scanner(System.in);
     int menu1, menu2, menu0, shift;
-    char caesarValg;
+    char caesarValg, vigenereValg;
     String krypteringsTekst, kodeTekst;
 
     void menu() {
@@ -65,6 +65,14 @@ public class Main {
         caesarValg = in.next().charAt(0);
         System.out.println("3) Tryk 0 for at komme til hovedmenuen");
         menu0 = in.nextInt();
+    }
+
+    void vigenereMenu() {
+        if (menu1 == 2) {
+            System.out.println("Ønsker du at kryptere eller dekryptere? Skriv K for at kryptere" +
+                "eller skriv D for at dekryptere");
+            vigenereValg = in.next().charAt(0);
+        }
     }
 
     void go() {
